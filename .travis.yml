@@ -1,0 +1,29 @@
+sudo: required
+services:
+  - docker
+
+matrix:
+  fast_finish: true
+
+before_install:
+  - bash ./.travis/main.sh
+
+env:
+  global:
+    - alpine_image='alpine:3.9'
+    - repo='fspnetwork/infrastructure'
+    - latest='3.9'
+  matrix:
+    - base='alpine' type='-' version='3.9' folder='/3.9'
+    - base='alpine' type='' version='' folder='/3.9'
+    - base='' type='' version='development' folder='alpine/development'
+    - base='alpine' type='-' version='development' folder='/development'
+
+before_script:
+  - sudo docker pull $alpine_image
+
+script:
+  - sudo docker build -t $repo:$base$type$version $base$folder
+
+after_success:
+- bash ./.travis/push.sh
