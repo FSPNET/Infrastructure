@@ -2,8 +2,8 @@
 
 🐳 FSP Network Gen2 Server Infrastructure, all Docker image based this. Like everything is based on C langage.
 
-[![MicroBadger Size](https://img.shields.io/microbadger/image-size/fspnetwork/c.svg?style=flat-square)](https://microbadger.com/#/images/fspnetwork/c)
-[![Docker Automated build](https://img.shields.io/docker/automated/fspnetwork/c.svg?style=flat-square)](https://hub.docker.com/r/fspnetwork/c/)
+[![MicroBadger Size](https://img.shields.io/microbadger/image-size/fspnetwork/infrastructure.svg?style=flat-square)](https://microbadger.com/#/images/fspnetwork/infrastructure)
+[![Docker Automated build](https://img.shields.io/docker/automated/fspnetwork/infrastructure.svg?style=flat-square)](https://hub.docker.com/r/fspnetwork/infrastructure/)
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg?style=flat-square)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg?style=flat-square)](https://996.icu)
 
