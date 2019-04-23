@@ -1,0 +1,28 @@
+FROM alpine
+
+ENV ALPINE_VERSION=3.9 \
+    PACKAGES="\
+      dumb-init \
+      bash \
+      ca-certificates \
+    " \
+    BUILD_PACKAGES="\
+      build-base \
+      musl-dev \
+      gcc \
+      linux-headers \
+      libc6-compat \
+      libffi-dev \
+    "
+
+RUN set -ex; \
+  echo "http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_VERSION/community" >> /etc/apk/repositories ;\
+  echo "http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_VERSION/main" >> /etc/apk/repositories ;\
+  apk update ;\
+  apk add --no-cache ${PACKAGES} ||\
+    (sed -i -e 's/dl-cdn/dl-4/g' /etc/apk/repositories && apk add --no-cache $PACKAGES) ;\
+  echo "http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_VERSION/main/" > /etc/apk/repositories ;\
+  # echo "@community http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_VERSION/community" >> /etc/apk/repositories ;\
+  # echo "@testing http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_VERSION/testing" >> /etc/apk/repositories ;\
+  # echo "@edge-main http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories ;\
+  rm -rf /var/cache/apk/*
