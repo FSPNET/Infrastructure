@@ -10,7 +10,8 @@
 
 ## Supported tags
 
-- [`latest`, `alpine`, `alpine-3.9` (Dockerfile)](https://github.com/FSPNET/c/blob/master/alpine/3.9/Dockerfile)
+- [`latest`, `alpine`, `alpine-3.10` (Dockerfile)](https://github.com/FSPNET/c/blob/master/alpine/3.10/Dockerfile)
+- [`alpine-3.9` (Dockerfile)](https://github.com/FSPNET/c/blob/master/alpine/3.9/Dockerfile)
 - [`development`, `alpine-development` (development)](https://github.com/FSPNET/c/blob/master/alpine/development/Dockerfile)
 
 **Notes:**
