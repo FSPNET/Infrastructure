@@ -5,6 +5,7 @@ ENV ALPINE_VERSION=3.10 \
       dumb-init \
       bash \
       ca-certificates \
+      tzdata \
     " \
     BUILD_PACKAGES="\
       build-base \
@@ -25,4 +26,5 @@ RUN set -ex; \
   # echo "@community http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_VERSION/community" >> /etc/apk/repositories ;\
   # echo "@testing http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_VERSION/testing" >> /etc/apk/repositories ;\
   # echo "@edge-main http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories ;\
+  ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime ;\
   rm -rf /var/cache/apk/*
