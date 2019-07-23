@@ -1,6 +1,6 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
-ENV ALPINE_VERSION=3.9 \
+ENV ALPINE_VERSION=3.10 \
     PACKAGES="\
       dumb-init \
       bash \

@@ -10,10 +10,12 @@ before_install:
 
 env:
   global:
-    - alpine_image='alpine:3.9'
+    - alpine_image='alpine:3.10'
     - repo='fspnetwork/infrastructure'
-    - latest='3.9'
+    - latest='3.10'
   matrix:
+    - base='alpine' type='-' version='3.10' folder='/3.10'
+    - base='alpine' type='' version='' folder='/3.10'
     - base='alpine' type='-' version='3.9' folder='/3.9'
     - base='alpine' type='' version='' folder='/3.9'
     - base='' type='' version='development' folder='alpine/development'
