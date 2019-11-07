@@ -3,7 +3,6 @@ FROM alpine:3.9
 ENV ALPINE_VERSION=3.9 \
     PACKAGES="\
       dumb-init \
-      bash \
       ca-certificates \
       tzdata \
     " \
